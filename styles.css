@@ -1,0 +1,439 @@
+
+body{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  color: rgb(30, 30, 30);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    display: none;
+    flex-direction: column;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+}
+nav{
+    position: absolute;
+    right: 30px;
+    top: 25px;
+}
+nav a{
+    text-decoration: none;
+    color: rgb(13, 163, 46);
+    font-weight: 600;
+    margin-left: 20px;
+    transition: color 0.25s ease, transform 0.25s ease;
+    position: relative;
+}
+nav .cur{
+    color: #fff;
+    background-color: rgb(13, 163, 46);
+    padding: 10px;
+    border-radius: 10px;
+}
+nav a:hover{
+    color: rgb(0, 255, 64);
+    transform: translateY(-2px);
+}
+nav a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, rgb(0, 255, 64), rgb(13, 163, 46));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+nav a:hover::after{
+    transform: scaleX(1);
+}
+nav .cur:hover{
+    color: #fff;
+    background-color: rgb(0, 255, 64);
+}
+header{
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+main{
+    margin-top: 70px;
+}
+.headertext{
+    background: linear-gradient(rgb(0, 255, 64), rgb(13, 163, 46));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 30px;
+    cursor: pointer;
+    width: fit-content;
+    transition: 0.3s;
+}
+.headertext:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+.bottomofheader{
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    position: absolute;
+}
+.borderimgeffect{
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(
+        90deg,
+        rgb(0,255,64),
+        rgb(13,163,46),
+        rgb(0,255,64)
+    );
+    transform: translateY(-7px);
+    background-size: 200% 100%;
+    animation: bord 3s linear infinite;
+}
+
+@keyframes bord {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 200% 0%;
+    }
+}
+
+.starterimg{
+    width: 100%;
+    object-fit: cover;
+    height: 500px;
+    filter: brightness(60%);
+}
+.starterhead{
+    position: relative;
+    bottom: 150px;
+    text-align: center;
+    color: #fff;
+    font-size: 36px;
+    font-weight: 800;
+    text-shadow: 0 0 4px #000;
+}
+.info{
+    padding: 20px;
+    text-align: center;
+}
+.infotext{
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    font-size: 18px;
+    line-height: 1.75;
+    color: rgb(42, 42, 42);
+}
+.play{
+    text-align: center;
+}
+.playhead{
+    color: #000000;
+    font-weight: 600;
+    font-size: 34px;
+    letter-spacing: 0.4px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+    position: absolute;
+    top: 570px;
+    text-align: center;
+    width: 100%;
+}
+.infohead{
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    background: linear-gradient(90deg, rgb(0, 160, 52), rgb(0, 220, 70));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+.playbutton{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    color: rgb(13, 163, 46);
+    border: 4px solid transparent;
+    padding: 5px 15px;
+    line-height: 1;
+    background:
+        linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) padding-box,
+        linear-gradient(90deg, rgb(0, 255, 64, 0.6), rgb(0, 135, 45)) border-box;
+    border-radius: 20px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 0 16px rgba(0, 255, 64, 0.45);
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+    transition: 0.2s;
+}
+.playbutton:hover{
+    background:
+        linear-gradient(90deg, rgb(0, 220, 55), rgb(0, 140, 45)) padding-box,
+        linear-gradient(90deg, rgb(120, 255, 166), rgb(0, 255, 64)) border-box;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+    border: 4px solid transparent;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 0 16px rgba(0, 255, 64, 0.65);
+    transition: 0.3s;
+}
+.carousel{
+    overflow: hidden;
+    width: 100%;
+    margin-top: 20px;
+}
+.carouselinter{
+    display: flex;
+    width: 300%;
+    animation: scroll 8s linear infinite;
+    gap: 0.45%;
+}
+.carouselinter img{
+    width: 10.666666666%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+@keyframes scroll {
+    100% {
+        transform: translateX(calc(-100% / 3));
+    }
+}
+.carouseloverlay{
+    position: absolute;
+    width: 100%;
+    height: 220px;
+    transform: translateY(-70%);
+    height: 60%;
+    background: linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0) 5%, rgba(255, 255, 255, 0) 95%, rgba(255, 255, 255, 1));
+    pointer-events: none;
+}
+.kithead{
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 40px;
+    position: absolute;
+    background: linear-gradient(to right, rgb(26, 221, 0), rgb(0, 255, 55));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.kitimg{
+    position: absolute;
+    width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    opacity: 0.8;
+}
+.kitin{
+    display: flex;
+    gap: 20px;
+    padding-top: 150px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+footer{
+    margin-top: 30px;
+    background-color: rgb(245, 245, 245);
+    transform: translateY(10px);
+}   
+.footertext{
+    text-align: center;
+    padding: 20px;
+    color: rgb(150, 150, 150);
+    font-size: 14px;
+}
+.footertext a{
+    color: rgb(43, 43, 43);
+    text-decoration: none;
+}
+.footertext a:hover{
+    text-decoration: underline;
+}
+.playip{
+    font-weight: 600;
+    font-size: 20px;
+    color: rgb(0, 0, 0); 
+    border: 3px solid transparent;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    background: linear-gradient(rgb(0, 255, 64), rgb(0, 255, 64)) padding-box;
+    width: max(50%, 300px);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+    padding: 10px;
+    height: 50%;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    box-shadow: 0 0 0 1px rgba(0, 120, 35, 0.45), 0 0 16px rgba(0, 220, 70, 0.55);
+    animation: ip-glow-pulse 2.4s ease-in-out infinite;
+}
+.playip::before{
+    content: "";
+    position: absolute;
+    inset: -120%;
+    background: conic-gradient(
+        from 0deg,
+        rgb(0, 168, 42),
+        rgb(100, 255, 145),
+        rgb(0, 190, 55),
+        rgb(0, 168, 42)
+    );
+    animation: ip-ring-spin 2.2s linear infinite;
+    z-index: -2;
+}
+.playip::after{
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: inherit;
+    background: rgb(0, 255, 64);
+    z-index: -1;
+}
+@keyframes ip-ring-spin{
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes ip-glow-pulse{
+    0%, 100%{
+        box-shadow: 0 0 0 1px rgba(0, 120, 35, 0.45), 0 0 16px rgba(0, 220, 70, 0.55);
+    }
+    50%{
+        box-shadow: 0 0 0 1px rgba(0, 145, 42, 0.65), 0 0 28px rgba(90, 255, 145, 0.85);
+    }
+}
+.play button:not(.playbutton) img{
+    width: 20px;
+    height: 20px;
+}
+.play button:not(.playbutton){
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.copyic{
+    display: inline;
+}
+.copied{
+    display: none;
+}
+.contacts{
+    background: linear-gradient(145deg, rgb(0, 188, 66), rgb(0, 255, 64));
+    padding: 30px 20px 36px;
+}
+.contacth{
+    text-align: center;
+    color: #fff;
+    margin: 0 0 18px;
+    font-size: 34px;
+    letter-spacing: 0.3px;
+}
+.contactsgrid{
+    width: min(980px, 96%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 18px;
+}
+.contactcard{
+    background: rgba(255, 255, 255, 0.96);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 18px;
+    padding: 18px 16px;
+    box-shadow: 0 8px 22px rgba(0, 95, 28, 0.2);
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    position: relative;
+    overflow: hidden;
+}
+.contactcard::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, rgba(255, 255, 255, 0) 32%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 68%);
+    transform: translateX(-130%);
+    transition: transform 0.55s ease;
+    pointer-events: none;
+}
+.contactcard:hover{
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 14px 28px rgba(0, 95, 28, 0.28);
+    border-color: rgba(90, 255, 150, 0.95);
+}
+.contactcard:hover::before{
+    transform: translateX(130%);
+}
+.contactname{
+    margin: 0;
+    font-size: 25px;
+    color: rgb(0, 105, 40);
+}
+.contactrole{
+    margin: 6px 0 14px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    color: rgb(40, 120, 64);
+}
+.contactline{
+    margin: 8px 0;
+    color: rgb(34, 34, 34);
+    font-size: 16px;
+    line-height: 1.45;
+}
+.contactline a{
+    color: rgb(0, 130, 48);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(0, 130, 48, 0.4);
+}
+.contactline a:hover{
+    color: rgb(0, 95, 36);
+    border-bottom-color: rgba(0, 95, 36, 0.8);
+}
+
+@media (max-width: 760px){
+    .contactsgrid{
+        grid-template-columns: 1fr;
+    }
+}
+.kitimgarea{
+    width: min(80%,700px);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
