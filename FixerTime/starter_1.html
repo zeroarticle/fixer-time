@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script>
+        document.querySelector('.menu-btn')
+        .onclick = () =>
+        document.querySelector('.navbar')
+        .classList.toggle('active');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixerTime</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h2 onclick="window.location.assign('starter_1.html')" class="headertext">FixerTime</h2>
+        <nav class="navbar">
+            <a class="cur" href="starter_1.html">Главная</a>
+            <a href="play.html">Играть</a>
+            <a href="kits.html">Наборы</a>
+        </nav>
+        <div class="bottomofheader"></div>
+    </header>
+    <main>
+    <div class="starter">
+        <img src="res/car1.png" class="starterimg">
+        <div class="borderimgeffect"></div>
+        <h1 class="starterhead">Minecraft сервер на JAVA 1.16.5</h1>
+    </div>
+    <div class="play">
+        <h1 class="playhead">Играть на сервере (FABRIC 1.16.5 JAVA):</h1>
+        <button onclick="window.location.assign('play.html')" class="playbutton">Играть</button>
+    </div>
+    <div class="info">
+        <h2 class="infohead">О сервере</h2>
+        <p class="infotext">FixerTime это уникальный проект на атерносе. Наша задача создать первый в мире сервер работающий на атерносе. FixerTime это гриферское выживание где задача гриферить базы, драться с игроками,  стать самым сильным игроком.</p>
+    </div>
+    <div class="carousel">
+        <div class="carouselinter">
+            <img src="res/car1.png" class="carouselimg">
+            <img src="res/car2.png" class="carouselimg">
+            <img src="res/car3.png" class="carouselimg">
+            <img src="res/car1.png" class="carouselimg">
+            <img src="res/car2.png" class="carouselimg">
+            <img src="res/car3.png" class="carouselimg">
+        </div>
+        <div class="carouseloverlay"></div>
+    </div>
+    <div class="kit">
+        <img src="res/kit.png" class="kitimg">
+        <h1 class="kithead">Kit-наборы</h1>
+        <div class="kitin">
+            <div><p>Кит-наборы - это наборы полезных предметов за донат, которые помогают быстрее стартовать, усилить экипировку и увереннее чувствовать себя в PvP и выживании. В наборах могут быть ресурсы, броня, оружие, инструменты и расходники, которые экономят время на развитие и позволяют раньше перейти к активной игре. Каждый кит рассчитан на свой этап прогресса: от базовой помощи новичкам до более сильных вариантов для опытных игроков. Покупка происходит не на этом сайте, а на отдельной странице проекта. Подобрать подходящий вариант и купить набор вы можете <a href="kits.html">здесь</a>.
+            </p><p style="text-align: center;">⇓⇓⇓ <i>Также помогает на арене как здесь</i> ⇓⇓⇓</p><img class="kitimgarea" src="res/car2.png" style="border-radius: 20px;"></div>
+        </div>
+    </div>
+    <div class="contacts">
+        <h1 class="contacth">Хотите связаться?</h1>
+        <div class="contactsgrid">
+            <article class="contactcard">
+                <h3 class="contactname">Damir19kpro3</h3>
+                <p class="contactrole">Владелец</p>
+                <p class="contactline"><strong>Объявления:</strong> <a href="https://t.me/Damir19kpro3" target="_blank" rel="noopener noreferrer">@Damir19kpro3</a></p>
+                <p class="contactline"><strong>Discord:</strong> @damirpro0420_26649</p>
+            </article>
+            <article class="contactcard">
+                <h3 class="contactname">zeroarticle</h3>
+                <p class="contactrole">Админ</p>
+                <p class="contactline"><strong>Discord:</strong> @zeroarticle</p>
+            </article>
+        </div>
+    </div>
+    <footer>
+        <p class="footertext">© FixerTime 2026, сайт создан zeroarticle, подробнее <a href="licence.html">здесь</a>.</p>
+    </main>
+</body>
+</html>
