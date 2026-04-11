@@ -447,3 +447,16 @@ footer{
     margin-right: auto;
     margin-bottom: 30px;
 }
+#status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: gray;
+  box-shadow: 0 0 5px gray;
+  transition: 0.3s;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 5px lime; }
+  50% { box-shadow: 0 0 15px lime; }
+  100% { box-shadow: 0 0 5px lime; }
+}

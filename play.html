@@ -18,6 +18,24 @@
                 document.getElementById('copied').style.display = 'none';
             }, 2000);
         }
+fetch("https://api.mcsrvstat.us/2/FixerTime.aternos.me:64634")
+.then(res => res.json())
+.then(data => {
+  const text = document.getElementById("online");
+  const dot = document.getElementById("status-dot");
+dot.style.animation = "pulse 1.5s infinite";
+  if (data.online) {
+    text.innerText = `Онлайн: ${data.players.online}`;
+    
+    dot.style.background = "lime";
+    dot.style.boxShadow = "0 0 10px lime";
+  } else {
+    text.innerText = "Сервер оффлайн";
+    
+    dot.style.background = "red";
+    dot.style.boxShadow = "0 0 10px red";
+  }
+});
 
     </script>
 
@@ -45,6 +63,10 @@
         <p class="infotext">FixerTime это уникальный проект на атерносе. Наша задача создать первый в мире сервер работающий на атерносе. FixerTime это гриферское выживание где задача гриферить базы, драться с игроками,  стать самым сильным игроком.</p>
     </div>
     <div class="play">
+        <div id="server-status" style="display:flex; align-items:center; gap:10px;">
+            <div id="status-dot"></div>
+            <span id="online">Проверка...</span>
+        </div>
         <h1>Играть на сервере (FABRIC 1.16.5 JAVA):</h1>
         <p class="playip">IP-адрес: FixerTime.aternos.me:64634 <button id="copy" onclick="copyText()"><img class="copy" id="copyc" src="res/copy.png"><img id="copied" class="copied" src="res/check.png"></button></p>
         <p style="width: 80%; margin-left: auto; margin-right: auto;">Лицензия Minecraft не объязательна что бы играть на нашем сервере. Сервер скоро будет работать крулосуточно. По всем вопросам обращатся к админам и создателю.</p>
