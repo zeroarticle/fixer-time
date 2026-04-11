@@ -424,7 +424,12 @@ footer{
     color: rgb(0, 95, 36);
     border-bottom-color: rgba(0, 95, 36, 0.8);
 }
-
+.contactimg{
+    height: 120px;
+    border-radius: 20px;
+    position: absolute;
+    transform: translate(310px, -95px);
+}
 @media (max-width: 760px){
     .contactsgrid{
         grid-template-columns: 1fr;
