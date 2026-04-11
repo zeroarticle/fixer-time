@@ -394,6 +394,9 @@ footer{
     box-shadow: 0 14px 28px rgba(0, 95, 28, 0.28);
     border-color: rgba(90, 255, 150, 0.95);
 }
+.contacttxt{
+    text-align: center; color: white;
+}
 .contactcard:hover::before{
     transform: translateX(130%);
 }
