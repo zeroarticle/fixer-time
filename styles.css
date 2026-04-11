@@ -378,7 +378,7 @@ footer{
     transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     position: relative;
     overflow: hidden;
-    height: 140px;
+    height: 160px;
 }
 .contactcard::before{
     content: "";
@@ -432,7 +432,7 @@ footer{
     height: 120px;
     border-radius: 20px;
     position: absolute;
-    transform: translate(310px, -127px);
+    transform: translate(310px, -150px);
 }
 @media (max-width: 760px){
     .contactsgrid{
