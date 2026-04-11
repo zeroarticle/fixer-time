@@ -432,7 +432,7 @@ footer{
     height: 120px;
     border-radius: 20px;
     position: absolute;
-    transform: translate(310px, -125px);
+    transform: translate(310px, -127px);
 }
 @media (max-width: 760px){
     .contactsgrid{
