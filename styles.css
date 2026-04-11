@@ -452,11 +452,17 @@ footer{
   height: 12px;
   border-radius: 50%;
   background: gray;
-  box-shadow: 0 0 5px gray;
   transition: 0.3s;
 }
-@keyframes pulse {
+
+@keyframes pulse-green {
   0% { box-shadow: 0 0 5px lime; }
   50% { box-shadow: 0 0 15px lime; }
   100% { box-shadow: 0 0 5px lime; }
+}
+
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 5px red; }
+  50% { box-shadow: 0 0 15px red; }
+  100% { box-shadow: 0 0 5px red; }
 }

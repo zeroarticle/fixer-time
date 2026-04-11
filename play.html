@@ -23,18 +23,21 @@ fetch("https://api.mcsrvstat.us/2/FixerTime.aternos.me:64634")
 .then(data => {
   const text = document.getElementById("online");
   const dot = document.getElementById("status-dot");
-dot.style.animation = "pulse 1.5s infinite";
+
   if (data.online) {
     text.innerText = `Онлайн: ${data.players.online}`;
     
     dot.style.background = "lime";
-    dot.style.boxShadow = "0 0 10px lime";
+    dot.style.animation = "pulse-green 1.5s infinite";
   } else {
     text.innerText = "Сервер оффлайн";
     
     dot.style.background = "red";
-    dot.style.boxShadow = "0 0 10px red";
+    dot.style.animation = "pulse-red 1.5s infinite";
   }
+})
+.catch(() => {
+  document.getElementById("online").innerText = "Ошибка";
 });
 
     </script>
