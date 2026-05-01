@@ -409,6 +409,9 @@ footer{
 .contactbanned{
     color: rgb(255, 17, 0);
 }
+.contactbgban{
+  background: rgb(255 206 206 / 96%);
+}
 .contactrole{
     margin: 6px 0 14px;
     font-size: 14px;
