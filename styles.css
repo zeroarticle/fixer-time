@@ -29,7 +29,7 @@ nav{
 }
 nav a{
     text-decoration: none;
-    color: rgb(13, 163, 46);
+    color: rgb(0, 130, 210);
     font-weight: 600;
     margin-left: 20px;
     transition: color 0.25s ease, transform 0.25s ease;
@@ -37,12 +37,12 @@ nav a{
 }
 nav .cur{
     color: #fff;
-    background-color: rgb(13, 163, 46);
+    background-color: rgb(0, 130, 210);
     padding: 10px;
     border-radius: 10px;
 }
 nav a:hover{
-    color: rgb(0, 255, 64);
+    color: rgb(0, 220, 255);
     transform: translateY(-2px);
 }
 nav a::after{
@@ -52,7 +52,7 @@ nav a::after{
     bottom: -4px;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, rgb(0, 255, 64), rgb(13, 163, 46));
+    background: linear-gradient(90deg, rgb(0, 220, 255), rgb(0, 105, 220));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.25s ease;
@@ -62,7 +62,7 @@ nav a:hover::after{
 }
 nav .cur:hover{
     color: #fff;
-    background-color: rgb(0, 255, 64);
+    background-color: rgb(0, 105, 220);
 }
 header{
     background-color: rgb(255, 255, 255);
@@ -75,7 +75,7 @@ main{
     margin-top: 70px;
 }
 .headertext{
-    background: linear-gradient(rgb(0, 255, 64), rgb(13, 163, 46));
+    background: linear-gradient(rgb(0, 220, 255), rgb(0, 105, 220));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -99,9 +99,9 @@ main{
     height: 5px;
     background: linear-gradient(
         90deg,
-        rgb(0,255,64),
-        rgb(13,163,46),
-        rgb(0,255,64)
+        rgb(0,220,255),
+        rgb(0,105,220),
+        rgb(0,220,255)
     );
     transform: translateY(-7px);
     background-size: 200% 100%;
@@ -165,7 +165,7 @@ main{
     font-size: 34px;
     font-weight: 800;
     letter-spacing: 0.4px;
-    background: linear-gradient(90deg, rgb(0, 160, 52), rgb(0, 220, 70));
+    background: linear-gradient(90deg, rgb(0, 145, 220), rgb(0, 220, 255));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -181,15 +181,15 @@ main{
     font-size: 24px;
     font-weight: 600;
     letter-spacing: 0.6px;
-    color: rgb(13, 163, 46);
+    color: rgb(0, 130, 210);
     border: 4px solid transparent;
     padding: 5px 15px;
     line-height: 1;
     background:
         linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) padding-box,
-        linear-gradient(90deg, rgb(0, 255, 64, 0.6), rgb(0, 135, 45)) border-box;
+        linear-gradient(90deg, rgb(0, 220, 255, 0.6), rgb(0, 85, 200)) border-box;
     border-radius: 20px;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 0 16px rgba(0, 255, 64, 0.45);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 0 16px rgba(0, 190, 255, 0.45);
     cursor: pointer;
     font-family: "Montserrat", sans-serif;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
@@ -197,12 +197,12 @@ main{
 }
 .playbutton:hover{
     background:
-        linear-gradient(90deg, rgb(0, 220, 55), rgb(0, 140, 45)) padding-box,
-        linear-gradient(90deg, rgb(120, 255, 166), rgb(0, 255, 64)) border-box;
+        linear-gradient(90deg, rgb(0, 180, 235), rgb(0, 80, 205)) padding-box,
+        linear-gradient(90deg, rgb(120, 235, 255), rgb(0, 220, 255)) border-box;
     color: #fff;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
     border: 4px solid transparent;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 0 16px rgba(0, 255, 64, 0.65);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 0 16px rgba(0, 190, 255, 0.65);
     transition: 0.3s;
 }
 .carousel{
@@ -242,7 +242,7 @@ main{
     font-weight: 700;
     margin-top: 40px;
     position: absolute;
-    background: linear-gradient(to right, rgb(26, 221, 0), rgb(0, 255, 55));
+    background: linear-gradient(to right, rgb(0, 145, 220), rgb(0, 220, 255));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -287,7 +287,7 @@ footer{
     border: 3px solid transparent;
     margin-top: -10px;
     margin-bottom: 10px;
-    background: linear-gradient(rgb(0, 255, 64), rgb(0, 255, 64)) padding-box;
+    background: linear-gradient(rgb(0, 220, 255), rgb(0, 220, 255)) padding-box;
     width: max(50%, 300px);
     margin-left: auto;
     margin-right: auto;
@@ -297,7 +297,7 @@ footer{
     position: relative;
     overflow: hidden;
     z-index: 0;
-    box-shadow: 0 0 0 1px rgba(0, 120, 35, 0.45), 0 0 16px rgba(0, 220, 70, 0.55);
+    box-shadow: 0 0 0 1px rgba(0, 95, 190, 0.45), 0 0 16px rgba(0, 190, 255, 0.55);
     animation: ip-glow-pulse 2.4s ease-in-out infinite;
 }
 .playip::before{
@@ -306,10 +306,10 @@ footer{
     inset: -120%;
     background: conic-gradient(
         from 0deg,
-        rgb(0, 168, 42),
-        rgb(100, 255, 145),
-        rgb(0, 190, 55),
-        rgb(0, 168, 42)
+        rgb(0, 90, 205),
+        rgb(100, 235, 255),
+        rgb(0, 175, 235),
+        rgb(0, 90, 205)
     );
     animation: ip-ring-spin 2.2s linear infinite;
     z-index: -2;
@@ -319,7 +319,7 @@ footer{
     position: absolute;
     inset: 3px;
     border-radius: inherit;
-    background: rgb(0, 255, 64);
+    background: rgb(0, 220, 255);
     z-index: -1;
 }
 @keyframes ip-ring-spin{
@@ -329,10 +329,10 @@ footer{
 }
 @keyframes ip-glow-pulse{
     0%, 100%{
-        box-shadow: 0 0 0 1px rgba(0, 120, 35, 0.45), 0 0 16px rgba(0, 220, 70, 0.55);
+        box-shadow: 0 0 0 1px rgba(0, 95, 190, 0.45), 0 0 16px rgba(0, 190, 255, 0.55);
     }
     50%{
-        box-shadow: 0 0 0 1px rgba(0, 145, 42, 0.65), 0 0 28px rgba(90, 255, 145, 0.85);
+        box-shadow: 0 0 0 1px rgba(0, 145, 220, 0.65), 0 0 28px rgba(90, 225, 255, 0.85);
     }
 }
 .play button:not(.playbutton) img{
@@ -352,7 +352,7 @@ footer{
     display: none;
 }
 .contacts{
-    background: linear-gradient(145deg, rgb(0, 188, 66), rgb(0, 255, 64));
+    background: linear-gradient(145deg, rgb(0, 145, 220), rgb(0, 220, 255));
     padding: 30px 20px 36px;
 }
 .contacth{
@@ -375,7 +375,7 @@ footer{
     border: 2px solid rgba(255, 255, 255, 0.8);
     border-radius: 18px;
     padding: 18px 16px;
-    box-shadow: 0 8px 22px rgba(0, 95, 28, 0.2);
+    box-shadow: 0 8px 22px rgba(0, 70, 150, 0.2);
     transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     position: relative;
     overflow: hidden;
@@ -392,8 +392,8 @@ footer{
 }
 .contactcard:hover{
     transform: translateY(-6px) scale(1.01);
-    box-shadow: 0 14px 28px rgba(0, 95, 28, 0.28);
-    border-color: rgba(90, 255, 150, 0.95);
+    box-shadow: 0 14px 28px rgba(0, 70, 150, 0.28);
+    border-color: rgba(90, 225, 255, 0.95);
 }
 .contacttxt{
     text-align: center; color: white;
@@ -404,7 +404,7 @@ footer{
 .contactname{
     margin: 0;
     font-size: 25px;
-    color: rgb(0, 105, 40);
+    color: rgb(0, 75, 160);
 }
 .contactbanned{
     color: rgb(255, 17, 0);
@@ -417,7 +417,7 @@ footer{
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.9px;
-    color: rgb(40, 120, 64);
+    color: rgb(35, 105, 155);
 }
 .contactline{
     margin: 8px 0;
@@ -426,14 +426,14 @@ footer{
     line-height: 1.45;
 }
 .contactline a{
-    color: rgb(0, 130, 48);
+    color: rgb(0, 105, 190);
     font-weight: 700;
     text-decoration: none;
-    border-bottom: 1px dashed rgba(0, 130, 48, 0.4);
+    border-bottom: 1px dashed rgba(0, 105, 190, 0.4);
 }
 .contactline a:hover{
-    color: rgb(0, 95, 36);
-    border-bottom-color: rgba(0, 95, 36, 0.8);
+    color: rgb(0, 75, 160);
+    border-bottom-color: rgba(0, 75, 160, 0.8);
 }
 .contactimg{
     height: 120px;
@@ -462,9 +462,9 @@ footer{
 }
 
 @keyframes pulse-green {
-  0% { box-shadow: 0 0 5px lime; }
-  50% { box-shadow: 0 0 15px lime; }
-  100% { box-shadow: 0 0 5px lime; }
+    0% { box-shadow: 0 0 5px cyan; }
+    50% { box-shadow: 0 0 15px cyan; }
+    100% { box-shadow: 0 0 5px cyan; }
 }
 
 @keyframes pulse-red {
