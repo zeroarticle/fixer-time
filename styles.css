@@ -488,7 +488,7 @@ footer{
     --accent-soft: #e4efff;
     --cyan: #62d8d0;
     --line: rgba(23, 29, 27, 0.12);
-    --display: "Oxanium", "Montserrat", sans-serif;
+    --display: "Manrope", "Montserrat", sans-serif;
 }
 
 html[data-theme="dark"]{
@@ -549,8 +549,7 @@ header{
     padding: 8px clamp(20px, 5vw, 72px);
     background: var(--header-bg);
     border-bottom: 1px solid var(--line);
-    box-shadow: 0 8px 26px rgba(23, 29, 27, 0.06);
-    backdrop-filter: blur(16px);
+    box-shadow: none;
 }
 
 .headertext{
@@ -564,7 +563,7 @@ header{
 
 .headertext::after{
     content: ".";
-    color: #77aa2d;
+    color: var(--accent);
 }
 
 .headertext:hover{
@@ -625,7 +624,7 @@ nav .cur:hover{
     place-items: center;
     padding: 0;
     border: 1px solid var(--line);
-    border-radius: 6px;
+    border-radius: 4px;
     color: var(--ink);
     background: var(--surface);
     cursor: pointer;
@@ -675,7 +674,7 @@ main{
     position: absolute;
     z-index: -1;
     inset: 0;
-    background: linear-gradient(90deg, rgba(12, 19, 16, 0.68), rgba(12, 19, 16, 0.12) 76%), linear-gradient(0deg, rgba(12, 19, 16, 0.58), transparent 56%);
+    background: rgba(12, 19, 16, 0.38);
 }
 
 .starterimg{
@@ -685,7 +684,7 @@ main{
     width: 100%;
     height: 100%;
     filter: brightness(0.82) saturate(0.82);
-    animation: hero-arrive 900ms ease-out both;
+    animation: none;
 }
 
 .starterhead{
@@ -697,7 +696,7 @@ main{
     color: #fff;
     font: 800 clamp(38px, 6vw, 76px)/1.04 var(--display);
     text-align: left;
-    text-shadow: 0 5px 30px rgba(0, 0, 0, 0.38);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
 .borderimgeffect{
@@ -706,8 +705,7 @@ main{
     bottom: 0;
     height: 5px;
     transform: none;
-    background: linear-gradient(90deg, var(--accent), var(--cyan), var(--accent));
-    background-size: 200% 100%;
+    background: var(--accent);
 }
 
 .play,
@@ -721,8 +719,9 @@ main{
     display: grid;
     justify-items: center;
     gap: 18px;
-    background: var(--accent);
-    color: var(--accent-contrast);
+    background: transparent;
+    color: var(--ink);
+    border-block: 1px solid var(--line);
     text-align: center;
 }
 
@@ -748,7 +747,7 @@ main{
     padding: 0 28px;
     color: var(--paper);
     background: var(--ink);
-    box-shadow: 4px 4px 0 rgba(23, 29, 27, 0.2);
+    box-shadow: none;
     font: 700 16px "Manrope", sans-serif;
     letter-spacing: 0;
     text-shadow: none;
@@ -758,8 +757,7 @@ main{
     border-color: var(--ink);
     color: var(--ink);
     background: var(--cyan);
-    box-shadow: 2px 2px 0 rgba(23, 29, 27, 0.2);
-    transform: translate(2px, 2px);
+    box-shadow: none;
 }
 
 .info{
@@ -799,7 +797,7 @@ main{
 .carouselinter img{
     width: calc(10.666666667% - 8px);
     aspect-ratio: 16 / 9;
-    border-radius: 5px;
+    border-radius: 0;
 }
 
 .carouseloverlay{
@@ -807,15 +805,14 @@ main{
     width: 100%;
     height: 100%;
     transform: none;
-    background: linear-gradient(90deg, #1b2420, transparent 9%, transparent 91%, #1b2420);
+    background: linear-gradient(90deg, var(--surface), transparent 8%, transparent 92%, var(--surface));
 }
 
 .kit{
     position: relative;
     padding-top: 76px;
-    background-color: var(--surface);
-    background-image: linear-gradient(rgba(23, 29, 27, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(23, 29, 27, 0.035) 1px, transparent 1px);
-    background-size: 28px 28px;
+    background-color: var(--paper);
+    background-image: none;
 }
 
 .kithead{
@@ -832,10 +829,10 @@ main{
     margin: 28px auto 0;
     padding: 26px clamp(20px, 5vw, 48px);
     border: 1px solid var(--line);
-    border-left: 5px solid var(--accent);
-    border-radius: 7px;
+    border-left: 2px solid var(--accent);
+    border-radius: 3px;
     background: var(--surface);
-    box-shadow: 0 14px 40px rgba(23, 29, 27, 0.07);
+    box-shadow: none;
     color: var(--muted);
 }
 
@@ -847,20 +844,20 @@ main{
 
 .contacts{
     padding: clamp(38px, 6vw, 72px) 20px;
-    background: #202a25;
+    background: var(--paper);
 }
 
 .contacth{
     margin: 0 0 10px;
     padding: 0;
-    color: #fff;
+    color: var(--ink);
     font: 700 clamp(30px, 4.5vw, 46px)/1.1 var(--display);
     letter-spacing: 0;
 }
 
 .contacttxt{
     margin: 0 0 28px;
-    color: #bdc9c1;
+    color: var(--muted);
 }
 
 .contactsgrid{
@@ -874,8 +871,8 @@ main{
     min-height: 180px;
     height: auto;
     padding: 18px 126px 18px 20px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 7px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
     background: var(--surface);
     box-shadow: none;
 }
@@ -883,7 +880,7 @@ main{
 .contactcard:hover{
     transform: translateY(-3px);
     border-color: var(--accent);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+    box-shadow: none;
 }
 
 .contactcard::before{
@@ -919,7 +916,7 @@ main{
     right: 16px;
     width: 90px;
     height: 90px;
-    border-radius: 5px;
+    border-radius: 3px;
     object-fit: cover;
     transform: translateY(-50%);
 }
@@ -971,12 +968,12 @@ footer{
     margin: 0;
     transform: none;
     border-top: 1px solid var(--line);
-    background: #151c18;
+    background: var(--paper);
 }
 
 .footertext{
     margin: 0;
-    color: #aab5ad;
+    color: var(--muted);
 }
 
 .footertext a{
