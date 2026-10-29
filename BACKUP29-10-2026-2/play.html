@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script>
+        async function copyText() {
+            const text = "Server is not ready yet!";
+
+            try {
+                await navigator.clipboard.writeText(text);
+                console.log('Text copied to clipboard successfully!');
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+            }
+            document.getElementById('copied').style.display = 'inline';
+            document.getElementById('copyc').style.display = 'none';
+            setTimeout(() => {
+                document.getElementById('copyc').style.display = 'inline';
+                document.getElementById('copied').style.display = 'none';
+            }, 2000);
+        }
+fetch("https://api.mcsrvstat.us/2/FixerTime.aternos.me:64634")
+.then(res => res.json())
+.then(data => {
+  const text = document.getElementById("online");
+  const dot = document.getElementById("status-dot");
+
+  if (data.online) {
+    text.innerText = `Онлайн: ${data.players.online}`;
+    
+    dot.style.background = "lime";
+    dot.style.animation = "pulse-green 1.5s infinite";
+  } else {
+    text.innerText = "Сервер оффлайн";
+    
+    dot.style.background = "red";
+    dot.style.animation = "pulse-red 1.5s infinite";
+  }
+})
+.catch(() => {
+  document.getElementById("online").innerText = "Ошибка";
+});
+
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixerTime</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h2 onclick="window.location.assign('index.html')" class="headertext">FixerTime</h2>
+        <nav class="navbar">
+            <a href="index.html">Главная</a>
+            <a class='cur' href="play.html">Играть</a>
+            <a href="kits.html">Наборы</a>
+        </nav>
+        <div class="bottomofheader"></div>
+    </header>
+    <main>
+    <div class="info">
+        <h2 class="infohead">О сервере</h2>
+        <p class="infotext">FixerTime это уникальный проект на атерносе. Наша задача создать первый в мире сервер работающий на атерносе. FixerTime это гриферское выживание где задача гриферить базы, драться с игроками,  стать самым сильным игроком.</p>
+    </div>
+    <div class="play">
+        <h1>Играть на сервере (1.21.11 JAVA):</h1>
+        <p class="playip">
+            IP-адрес: Скоро будет готово ! 
+            <button id="copy" onclick="copyText()"><img class="copy" id="copyc" src="res/copy.png"><img id="copied" class="copied" src="res/check.png"></button></p>
+        <p style="width: 80%; margin-left: auto; margin-right: auto;">Лицензия Minecraft не объязательна что бы играть на нашем сервере. Сервер работает крулосуточно. По всем вопросам обращатся к админам и создателю.</p>
+    </div>
+    <div class="carousel">
+        <div class="carouselinter">
+            <img src="res/car1.png" class="carouselimg">
+            <img src="res/car2.png" class="carouselimg">
+            <img src="res/car3.png" class="carouselimg">
+            <img src="res/car4.png" class="carouselimg">
+            <img src="res/car1.png" class="carouselimg">
+            <img src="res/car2.png" class="carouselimg">
+            <img src="res/car3.png" class="carouselimg">
+            <img src="res/car4.png" class="carouselimg">
+        </div>
+        <div class="carouseloverlay"></div>
+    </div>
+    
+    <footer>
+        <p class="footertext">© FixerTime 2026, сайт создан zeroarticle, подробнее <a href="licence_1.html">здесь</a>.</p>
+    </main>
+</body>
+
+</html>
+
