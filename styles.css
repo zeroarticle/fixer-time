@@ -478,13 +478,32 @@ footer{
 :root{
     color-scheme: light;
     --ink: #171d1b;
-    --muted: #64716c;
+    --muted: #52605a;
     --paper: #f3f6f2;
     --surface: #ffffff;
-    --acid: #c7f36b;
+    --header-bg: rgba(248, 250, 247, 0.94);
+    --accent: #1769e0;
+    --accent-contrast: #ffffff;
+    --accent-link: #175ab2;
+    --accent-soft: #e4efff;
     --cyan: #62d8d0;
     --line: rgba(23, 29, 27, 0.12);
     --display: "Oxanium", "Montserrat", sans-serif;
+}
+
+html[data-theme="dark"]{
+    color-scheme: dark;
+    --ink: #e7eee9;
+    --muted: #aab8af;
+    --paper: #111714;
+    --surface: #1b2420;
+    --header-bg: rgba(20, 27, 23, 0.94);
+    --accent: #245b9d;
+    --accent-contrast: #ffffff;
+    --accent-link: #8bc0ff;
+    --accent-soft: #1d344b;
+    --cyan: #70d7f0;
+    --line: rgba(255, 255, 255, 0.14);
 }
 
 html{
@@ -499,14 +518,36 @@ body{
     line-height: 1.65;
 }
 
+html[data-theme="dark"] body{
+    background: var(--paper);
+    color: var(--ink);
+}
+
+html[data-theme="dark"] body h1,
+html[data-theme="dark"] body h2,
+html[data-theme="dark"] body a{
+    color: var(--accent-link);
+}
+
+html[data-theme="dark"] body h1,
+html[data-theme="dark"] body h2{
+    color: var(--ink);
+}
+
+html[data-theme="dark"] .contacts[style]{
+    background-color: var(--paper) !important;
+}
+
 header{
     position: sticky;
+    box-sizing: border-box;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
     padding: 8px clamp(20px, 5vw, 72px);
-    background: rgba(248, 250, 247, 0.94);
+    background: var(--header-bg);
     border-bottom: 1px solid var(--line);
     box-shadow: 0 8px 26px rgba(23, 29, 27, 0.06);
     backdrop-filter: blur(16px);
@@ -548,7 +589,7 @@ nav .cur{
     padding: 0 16px;
     border: 1px solid transparent;
     border-radius: 7px;
-    color: #46534d;
+    color: var(--muted);
     background: transparent;
     font-size: 14px;
     font-weight: 700;
@@ -558,7 +599,7 @@ nav .cur{
 
 nav a:hover{
     color: var(--ink);
-    background: rgba(199, 243, 107, 0.35);
+    background: var(--accent-soft);
     transform: translateY(-1px);
 }
 
@@ -568,12 +609,51 @@ nav a::after{
 
 nav .cur,
 nav .cur:hover{
-    color: var(--ink);
-    background: var(--acid);
+    color: var(--accent-contrast);
+    background: var(--accent);
 }
 
 .bottomofheader{
     display: none;
+}
+
+.theme-toggle{
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    display: inline-grid;
+    place-items: center;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--ink);
+    background: var(--surface);
+    cursor: pointer;
+    transition: color 180ms ease, background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.theme-toggle:hover{
+    color: var(--accent-contrast);
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible{
+    outline: 3px solid var(--cyan);
+    outline-offset: 3px;
+}
+
+.theme-toggle-icon{
+    font-size: 21px;
+    line-height: 1;
+}
+
+.license-theme-toggle{
+    position: fixed;
+    z-index: 200;
+    top: 20px;
+    right: 20px;
 }
 
 main{
@@ -626,7 +706,7 @@ main{
     bottom: 0;
     height: 5px;
     transform: none;
-    background: linear-gradient(90deg, var(--acid), var(--cyan), var(--acid));
+    background: linear-gradient(90deg, var(--accent), var(--cyan), var(--accent));
     background-size: 200% 100%;
 }
 
@@ -641,7 +721,8 @@ main{
     display: grid;
     justify-items: center;
     gap: 18px;
-    background: var(--acid);
+    background: var(--accent);
+    color: var(--accent-contrast);
     text-align: center;
 }
 
@@ -665,7 +746,7 @@ main{
     border: 1px solid var(--ink);
     border-radius: 7px;
     padding: 0 28px;
-    color: #fff;
+    color: var(--paper);
     background: var(--ink);
     box-shadow: 4px 4px 0 rgba(23, 29, 27, 0.2);
     font: 700 16px "Manrope", sans-serif;
@@ -698,7 +779,7 @@ main{
 .infotext{
     width: min(760px, 100%);
     margin: 0 auto;
-    color: #52605a;
+    color: var(--muted);
     font-size: clamp(16px, 1.7vw, 18px);
     line-height: 1.85;
 }
@@ -732,7 +813,7 @@ main{
 .kit{
     position: relative;
     padding-top: 76px;
-    background-color: #e7ece5;
+    background-color: var(--surface);
     background-image: linear-gradient(rgba(23, 29, 27, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(23, 29, 27, 0.035) 1px, transparent 1px);
     background-size: 28px 28px;
 }
@@ -751,15 +832,15 @@ main{
     margin: 28px auto 0;
     padding: 26px clamp(20px, 5vw, 48px);
     border: 1px solid var(--line);
-    border-left: 5px solid #8dbb3c;
+    border-left: 5px solid var(--accent);
     border-radius: 7px;
-    background: rgba(255, 255, 255, 0.86);
+    background: var(--surface);
     box-shadow: 0 14px 40px rgba(23, 29, 27, 0.07);
-    color: #52605a;
+    color: var(--muted);
 }
 
 .kitin a{
-    color: #3d6c13;
+    color: var(--accent-link);
     font-weight: 800;
     text-underline-offset: 3px;
 }
@@ -795,13 +876,13 @@ main{
     padding: 18px 126px 18px 20px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 7px;
-    background: #f5f7f3;
+    background: var(--surface);
     box-shadow: none;
 }
 
 .contactcard:hover{
     transform: translateY(-3px);
-    border-color: var(--acid);
+    border-color: var(--accent);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
 }
 
@@ -810,27 +891,27 @@ main{
 }
 
 .contactname{
-    color: #26332c;
+    color: var(--ink);
     font: 700 21px/1.2 var(--display);
     overflow-wrap: anywhere;
 }
 
 .contactrole{
     margin: 5px 0 12px;
-    color: #647b68;
+    color: var(--muted);
     font-size: 12px;
     letter-spacing: 0.7px;
 }
 
 .contactline{
     margin: 6px 0;
-    color: #37433c;
+    color: var(--ink);
     font-size: 13px;
     overflow-wrap: anywhere;
 }
 
 .contactline a{
-    color: #426d19;
+    color: var(--accent-link);
 }
 
 .contactimg{
@@ -855,7 +936,7 @@ main{
     margin: 0;
     padding: 14px 18px;
     border-radius: 7px;
-    color: #fff;
+    color: var(--paper);
     background: var(--ink);
     box-shadow: none;
     font-size: clamp(14px, 2.5vw, 20px);
@@ -878,7 +959,7 @@ main{
     width: 44px;
     height: 44px;
     border-radius: 5px;
-    background: var(--acid);
+    background: var(--accent);
 }
 
 .play button:not(.playbutton) img{
@@ -899,7 +980,7 @@ footer{
 }
 
 .footertext a{
-    color: var(--acid);
+    color: var(--accent-link);
 }
 
 .kitimgarea{
